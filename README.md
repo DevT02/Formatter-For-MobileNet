@@ -1,6 +1,14 @@
 # MobileNetV2 Formatter
 > Compiles images into directories usable for mobilenetv2ssd training as well as the required text files **(except labels.txt)** for the
 [PytorchSSD](https://github.com/qfgaohao/pytorch-ssd/)
+
+## Notice
+```diff
+- You must manually drag your labels.txt file into both directories. 
+- Because this program moves images/files, antiviruses will likely flag it as malicious. Just exclude the program.
+- Files are split based on 70& for training, 20% for validation, and 10% for testing. 
+```
+
 # Passing Parameters
 ## Format: ``compileFormatter.exe --pname --vpname --idirect --ext --outdir``
 ```
@@ -17,11 +25,7 @@
 
 ```compileFormatter.exe --pname Name --vpname NameValid --idirect "PathToDir" --ext .JPG --outdir OutputName```
 &nbsp;
-## Notice
-```diff
-- You must manually drag your labels.txt file into both directories. 
-- Because this program moves images/files, antiviruses will likely flag it as malicious. Just exclude the program.
-```
+
 &nbsp;
 ## Examples:
 
