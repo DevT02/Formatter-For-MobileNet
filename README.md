@@ -1,5 +1,5 @@
 # MobileNetV2 Formatter
-> Compiles all images into directories usable for mobilenetv2ssd training
+> Compiles images into directories usable for mobilenetv2ssd training as well as the required text files (except labels.txt)
 
 # Passing Parameters
 ## Format: ``compileFormatter.exe --pname --vpname --idirect --ext --outdir``
