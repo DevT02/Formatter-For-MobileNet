@@ -20,6 +20,8 @@
 ## Notice
 
 You must manually drag your labels.txt file into both directories. 
+Because this program moves images/files, antiviruses will likely flag it as malicious. Just exclude the program.
+
 &nbsp;
 ## Examples:
 
