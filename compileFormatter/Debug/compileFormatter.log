@@ -1,0 +1,9 @@
+﻿  compileFormatter.cpp
+D:\Program Files\Microsoft Visual Studio Files\mobileNetFormatter\formatterForMobileNetV2\compileFormatter\compileFormatter.cpp(75,22): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\Program Files\Microsoft Visual Studio Files\mobileNetFormatter\formatterForMobileNetV2\compileFormatter\compileFormatter.cpp(76,24): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\Program Files\Microsoft Visual Studio Files\mobileNetFormatter\formatterForMobileNetV2\compileFormatter\compileFormatter.cpp(77,18): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\Program Files\Microsoft Visual Studio Files\mobileNetFormatter\formatterForMobileNetV2\compileFormatter\compileFormatter.cpp(128,22): warning C4018: '<': signed/unsigned mismatch
+D:\Program Files\Microsoft Visual Studio Files\mobileNetFormatter\formatterForMobileNetV2\compileFormatter\compileFormatter.cpp(137,22): warning C4018: '<': signed/unsigned mismatch
+D:\Program Files\Microsoft Visual Studio Files\mobileNetFormatter\formatterForMobileNetV2\compileFormatter\compileFormatter.cpp(145,22): warning C4018: '<': signed/unsigned mismatch
+D:\Program Files\Microsoft Visual Studio Files\mobileNetFormatter\formatterForMobileNetV2\compileFormatter\compileFormatter.cpp(154,23): warning C4018: '<': signed/unsigned mismatch
+  compileFormatter.vcxproj -> D:\Program Files\Microsoft Visual Studio Files\mobileNetFormatter\formatterForMobileNetV2\Debug\compileFormatter.exe
