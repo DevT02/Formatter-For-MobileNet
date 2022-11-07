@@ -6,9 +6,10 @@
 ```diff
 - You must manually drag your labels.txt file into both directories. 
 - Because this program moves images/files, antiviruses will likely flag it as malicious. Just exclude the program.
-+ Files are split based on 70& for training, 20% for validation, and 10% for testing. 
++ Files are split based on 70& for training, 20% for validation, and 10% for testing.  
 ```
-
+If you wish to change the percent distribution:
+https://github.com/DevT02/formatterForMobileNetV2/blob/0c514761563a4d61fe5d55ce51a142c0b39d87d2/compileFormatter/compileFormatter.cpp#L75-L77
 # Passing Parameters
 ## Format: ``compileFormatter.exe --pname --vpname --idirect --ext --outdir``
 ```
