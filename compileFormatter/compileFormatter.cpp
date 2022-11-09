@@ -72,9 +72,9 @@ $$ | \_/ $$ |$$$$$$$  |$$$$$$$$\\$  /   $$$$$$$$\       \$$$$$$  |\$$$$$$  |$$ |
     fs::create_directories(outputDirectory); // CREATE OUTPUT directory (just in case does not exist)
     int size = fileList.size();
     // 70-20-10 split, change if 80-10-10
-    int trainingSize = ceil(fileList.size() * 70 / 100);
-    int validationSize = floor(fileList.size() * 20 / 100); // this will actually include training in the final file..
-    int testSize = floor(fileList.size() * 10 / 100);
+    int trainingSize = ceil(fileList.size() * 70.0 / 100);
+    int validationSize = floor(fileList.size() * 20.0 / 100); // this will actually include training in the final file..
+    int testSize = floor(fileList.size() * 10.0 / 100);
 
     std::cout << "[MBVL2] Total number of images found: " << size << std::endl;
     std::cout << "[MBVL2] For training: " << trainingSize << std::endl;
