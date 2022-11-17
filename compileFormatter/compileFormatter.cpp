@@ -17,12 +17,14 @@ namespace po = boost::program_options;
 
 int main(int argc, const char* const argv[])
 {
-    if (argc == 0) {
-        std::cout << "Parameters example: compileFormatter.exe -directoryOfImages -nameOfProject -nameOfValidationProject -outputDirectory";
+    if (argc == 2 && strcmp(argv[1], "--help") == 0)
+    {
+        std::cout << "Parameters example: compileFormatter.exe --directoryOfImages -nameOfProject --nameOfValidationProject --outputDirectory" << std::endl;
+        std::cout << "Parameters example: compileFormatter.exe --pname --vpname --idirect --ext --outdir" << std::endl;
         return 0;
     }
 
-    
+
 
     po::options_description desc("Parameters compileFormatter.exe -directoryOfImages \"dir\" -ext -nameOfProject \"nameOfProject\" -nameOfValidationProject \"nameOfValidation\" -outputDirectory \"dir\"");
     desc.add_options()
@@ -72,9 +74,9 @@ $$ | \_/ $$ |$$$$$$$  |$$$$$$$$\\$  /   $$$$$$$$\       \$$$$$$  |\$$$$$$  |$$ |
     fs::create_directories(outputDirectory); // CREATE OUTPUT directory (just in case does not exist)
     int size = fileList.size();
     // 70-20-10 split, change if 80-10-10
-    int trainingSize = ceil(fileList.size() * 70.0 / 100);
-    int validationSize = floor(fileList.size() * 20.0 / 100); // this will actually include training in the final file..
-    int testSize = floor(fileList.size() * 10.0 / 100);
+    int trainingSize = ceil(fileList.size() * 70 / 100);
+    int validationSize = floor(fileList.size() * 20 / 100); // this will actually include training in the final file..
+    int testSize = floor(fileList.size() * 10 / 100);
 
     std::cout << "[MBVL2] Total number of images found: " << size << std::endl;
     std::cout << "[MBVL2] For training: " << trainingSize << std::endl;
@@ -96,9 +98,9 @@ $$ | \_/ $$ |$$$$$$$  |$$$$$$$$\\$  /   $$$$$$$$\       \$$$$$$  |\$$$$$$  |$$ |
     }
 
 
-    std::cout << "[MBVL2] " << size - trainingSize - validationSize - testSize << " images unused!" << std::endl;
+    std::cout << "[MBVL2] " << size - trainingSize - validationSize - testSize << " additional image(s) added to testing!" << std::endl;
 
-    fs::current_path(outputDirectory);
+    //fs::current_path(outputDirectory);
 
     std::vector<std::string> standardFormat = { "JPEGImages", "Annotations", "ImageSets" };
 
@@ -122,32 +124,27 @@ $$ | \_/ $$ |$$$$$$$  |$$$$$$$$\\$  /   $$$$$$$$\       \$$$$$$  |\$$$$$$  |$$ |
 
     std::fstream file;
     //std::cout << outputDirectory + "\\" + projName + "\\" + standardFormat[2] + "\\train.txt" << std::endl;
-
-
-    file.open(projName + "\\" + standardFormat[2] + "\\train.txt", std::ios_base::out);
+    file.open(outputDirectory + "\\" + projName + "\\" + standardFormat[2] + "\\train.txt", std::ios_base::out);
     for (int i = 0;i < trainingList.size();i++)
     {
-
         file << trainingList[i].string() << std::endl;
     }
     file.close();
-
-    std::fstream file2;
-    file2.open(projName + "\\" + standardFormat[2] + "\\trainval.txt", std::ios_base::out);
+    file.open(outputDirectory + "\\" + projName + "\\" + standardFormat[2] + "\\trainval.txt", std::ios_base::out);
     for (int i = 0;i < validationAndTrainingList.size();i++)
     {
-        file2 << validationAndTrainingList[i].string() << std::endl;
+        file << validationAndTrainingList[i].string() << std::endl;
     }
-    file2.close();
-
-    std::fstream file3;
-    file3.open(validName + "\\" + standardFormat[2] + "\\test.txt", std::ios_base::out);
+    file.close();
+    file.open(outputDirectory + "\\" + validName + "\\" + standardFormat[2] + "\\test.txt", std::ios_base::out);
     for (int i = 0;i < testList.size();i++)
     {
-        file3 << testList[i].string() << std::endl;
+        file << testList[i].string() << std::endl;
     }
-    file3.close();
+    file.close();
     std::cout << "[MBVL2] Successfully moved text files" << std::endl;
+
+
 
     //std::cout << dirName + "\\" + fileList.at(0).string() << std::endl;
 
