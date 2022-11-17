@@ -21,6 +21,11 @@ int main(int argc, const char* const argv[])
     {
         std::cout << "Parameters example: compileFormatter.exe --directoryOfImages -nameOfProject --nameOfValidationProject --outputDirectory" << std::endl;
         std::cout << "Parameters example: compileFormatter.exe --pname --vpname --idirect --ext --outdir" << std::endl;
+        std::cout << R"(--pname : Name for Model
+--vpname : Name for Model Validation
+--idirect : Image Directory Absolute Path
+--ext : File Extension of Images (CASE SENSITIVE)
+--outdir : Folder to Output (doesn't need specific directory))" << std::endl;
         return 0;
     }
 
