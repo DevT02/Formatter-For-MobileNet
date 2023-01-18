@@ -1,6 +1,6 @@
 # MobileNetV2 Formatter
-> Compiles images into directories usable for mobilenetv2ssd training as well as the required text files **(except labels.txt)** for the
-[PytorchSSD](https://github.com/qfgaohao/pytorch-ssd/) this is what is implemented into the [Nvidia Jetson](https://github.com/dusty-nv/jetson-inference)
+> Compiles images into directories usable for mobilenetv2ssd training as well as the required text files. AKA "prepare a dataset" **This does not create labels (labels.txt)**. Usage intended for 
+[PytorchSSD](https://github.com/qfgaohao/pytorch-ssd/), which is implemented into the [NVIDIA Jetson](https://github.com/dusty-nv/jetson-inference) trainer.
 
 ## Notice
 ```diff
